@@ -4,6 +4,8 @@
 
 Capture service-business leads, summarize urgency, and manage receptionist intake workflows.
 
+![serviceassistant-demo](screenshots/serviceassistant-demo.png)
+
 ## Why this project exists
 
 This is a portfolio-ready MVP in the **local business automation** lane. It demonstrates practical API product thinking, clean documentation, tests, and a working local browser demo.
