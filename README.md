@@ -1,30 +1,25 @@
-# AI Service Business Receptionist
+# Service Business Receptionist
 
-![Python](https://img.shields.io/badge/Python-3.11_|_3.12-3776AB?style=flat-square&logo=python) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite) ![Lead Capture](https://img.shields.io/badge/Lead_Capture-FF6F00?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.11_%7C_3.12-3776AB?style=flat-square&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite)
 
-Capture service-business leads, summarize urgency, and manage receptionist intake workflows.
-
-![serviceassistant-demo](screenshots/serviceassistant-demo.png)
-
-## Why this project exists
-
-This is a portfolio-ready MVP in the **local business automation** lane. It demonstrates practical API product thinking, clean documentation, tests, and a working local browser demo.
+Capture service-business leads, classify urgency, and manage receptionist intake workflows. Enter a lead's details and get a sorted callback queue — built for local businesses that need a structured alternative to sticky notes and spreadsheets.
 
 ## Features
 
-- Lead intake form
-- Urgency classification
-- Receptionist summary
-- Callback task list
-- Local service vertical presets
+- Lead intake form — name, contact, issue description, service vertical
+- Urgency classification (low/medium/high/critical) based on issue description keywords and time sensitivity
+- Receptionist summary view showing pending leads sorted by urgency
+- Callback task list with notes per lead
+- Preset service verticals (HVAC, plumbing, electrical, general)
+- All data stays local — no external API calls
 
 ## Tech Stack
 
-- Python 3.11+
-- FastAPI
-- SQLite
+- Python 3.11+ / FastAPI / SQLite
 - Vanilla HTML/CSS/JS frontend served by the API
-- Pytest API tests
+- Pytest
 
 ## Quick Start
 
@@ -33,25 +28,20 @@ uv sync
 uv run uvicorn src.main:app --reload --port 8104
 ```
 
-Then open: http://localhost:8104
+Open: http://localhost:8104
 
-Windows one-click launcher: `run.bat`
+Windows: double-click `run.bat`
 
 ## API
 
-- `GET /` - browser demo
-- `GET /api/health` - health check
-- `GET /docs` - interactive FastAPI docs
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Browser demo UI |
+| GET | `/api/health` | Health check |
+| GET | `/docs` | Interactive API docs |
 
-## Verification
+## Tests
 
 ```bash
 uv run pytest -q
 ```
-
-## Roadmap
-
-- Add authenticated user accounts
-- Add production deployment config
-- Replace deterministic helper logic with local Ollama model calls where useful
-- Add screenshots and a short demo GIF
